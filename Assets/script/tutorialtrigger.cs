@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TutorialTrigger : MonoBehaviour
+public class tutorialtrigger : MonoBehaviour
 {
     public GameObject placa;
 
