@@ -22,19 +22,23 @@ public class laura : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
 
         // ANDAR
-        if (moveInput != 0)
-            anim.SetBool("andando", true);
-        else
-            anim.SetBool("andando", false);
+        anim.SetBool("andando", moveInput != 0);
+
+        // VIRAR SPRITE
+        if (moveInput > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (moveInput < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
 
         // PULAR
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             anim.SetBool("pulando", true);
+            isGrounded = false;
         }
 
-        // Se estiver no chão, não está pulando
+        // VOLTA PARA IDLE DE PULO QUANDO TOCAR O CHÃO
         if (isGrounded)
             anim.SetBool("pulando", false);
     }

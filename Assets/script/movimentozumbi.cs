@@ -18,12 +18,16 @@ public class movimentozumbi : MonoBehaviour
         if (movingRight)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.localScale = new Vector3(1, 1, 1);
+
             if (transform.position.x >= startPos.x + distance)
                 movingRight = false;
         }
         else
         {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.localScale = new Vector3(-1, 1, 1);
+
             if (transform.position.x <= startPos.x - distance)
                 movingRight = true;
         }
