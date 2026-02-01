@@ -6,7 +6,7 @@ public class laura : MonoBehaviour
     public float jumpForce = 7f;
 
     private Rigidbody2D rb;
-    private Animator animator;
+    private Animator anim;
 
     private float moveInput;
     private bool isGrounded;
@@ -14,7 +14,7 @@ public class laura : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -23,20 +23,20 @@ public class laura : MonoBehaviour
 
         // ANDAR
         if (moveInput != 0)
-        {
-            animator.SetBool("isWalking", true);
-        }
+            anim.SetBool("andando", true);
         else
-        {
-            animator.SetBool("isWalking", false);
-        }
+            anim.SetBool("andando", false);
 
         // PULAR
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            animator.SetBool("isJumping", true);
+            anim.SetBool("pulando", true);
         }
+
+        // Se estiver no chão, não está pulando
+        if (isGrounded)
+            anim.SetBool("pulando", false);
     }
 
     void FixedUpdate()
@@ -49,7 +49,6 @@ public class laura : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            animator.SetBool("isJumping", false);
         }
     }
 
