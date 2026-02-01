@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class morte : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("player"))
+        if (collision.collider.CompareTag("player"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
