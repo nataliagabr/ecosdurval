@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ataqueID
+  m_Name: atirandoP
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -6841427410143383491, guid: 223e98f159b25a249b30854110274c17, type: 3}
+      value: {fileID: 1189229450756773371, guid: 2a4db706aa4bfcf459d5e3f45cccf592, type: 3}
     - time: 0.11666667
-      value: {fileID: -847050922010232078, guid: 084307a6aa964d448af2c27af5d90e72, type: 3}
+      value: {fileID: 1561519323427989907, guid: 39f4895695e73864983f2fffbed5d3d1, type: 3}
     - time: 0.23333333
-      value: {fileID: -6544555568843952370, guid: e5b5ffb21143f684095042d00e919468, type: 3}
+      value: {fileID: -7532053668160807965, guid: 99da656388e1e9645a42732b19ac4e27, type: 3}
     attribute: m_Sprite
     path: Laura idle_0
     classID: 212
@@ -48,9 +48,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -6841427410143383491, guid: 223e98f159b25a249b30854110274c17, type: 3}
-    - {fileID: -847050922010232078, guid: 084307a6aa964d448af2c27af5d90e72, type: 3}
-    - {fileID: -6544555568843952370, guid: e5b5ffb21143f684095042d00e919468, type: 3}
+    - {fileID: 1189229450756773371, guid: 2a4db706aa4bfcf459d5e3f45cccf592, type: 3}
+    - {fileID: 1561519323427989907, guid: 39f4895695e73864983f2fffbed5d3d1, type: 3}
+    - {fileID: -7532053668160807965, guid: 99da656388e1e9645a42732b19ac4e27, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -75,4 +75,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.11666667
+    functionName: AtivarAtaque
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.23333333
+    functionName: DesativarAtaque
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
