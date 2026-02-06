@@ -8,12 +8,10 @@ public class lauraluz : MonoBehaviour
     public AudioSource estaloAudio;
     public AudioSource rangidoAudio;
 
-    private bool lightOn = true;
-
+    private bool lightOn = false;
     void Start()
     {
-        light2D.enabled = true;
-
+        light2D.enabled = false;
         rangidoAudio.Stop();
     }
 
