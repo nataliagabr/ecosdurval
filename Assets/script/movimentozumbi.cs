@@ -1,35 +1,36 @@
 using UnityEngine;
 
-public class movimentozumbi : MonoBehaviour
+public class Zombie : MonoBehaviour
 {
     public float speed = 2f;
-    public float distance = 3f;
+    public float distanciaMinima = 0.5f;
 
-    private Vector3 startPos;
-    private bool movingRight = true;
+    private Transform player;
 
     void Start()
     {
-        startPos = transform.position;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
-        if (movingRight)
+        if (player == null) return;
+
+        float distancia = Vector2.Distance(transform.position, player.position);
+
+        if (distancia > distanciaMinima)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                player.position,
+                speed * Time.deltaTime
+            );
+        }
+
+        // virar sprite
+        if (player.position.x > transform.position.x)
             transform.localScale = new Vector3(1, 1, 1);
-
-            if (transform.position.x >= startPos.x + distance)
-                movingRight = false;
-        }
         else
-        {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
             transform.localScale = new Vector3(-1, 1, 1);
-
-            if (transform.position.x <= startPos.x - distance)
-                movingRight = true;
-        }
     }
 }
